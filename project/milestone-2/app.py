@@ -26,11 +26,16 @@ if st.button("Submit"):
     with st.spinner("Analyzing sentiment..."):
         pl = get_pipeline(selected_model)
         result = pl(text)
-        st.write(f"Sentiment: {result[0]['label']}")
+        label = result[0]['label']
         if(selected_model == "cardiffnlp/twitter-roberta-base-sentiment"):
-            st.write("(LABEL_0: *Negative*,  LABEL_1: *Neutral*,  LABEL_2: *Positive*)")
+            if label == "LABEL_0": st.write("Sentiment: Negative")
+            elif label == "LABEL_1": st.write("Sentiment: Neutral")
+            elif label == "LABEL_2": st.write("Sentiment: Positive")
         elif(selected_model == "textattack/bert-base-uncased-SST-2"):
-            st.write("(LABEL_0: *Negative*,  LABEL_1: *Positive*)")
+            if label == "LABEL_0": st.write("Sentiment: Negative")
+            elif label == "LABEL_1": st.write("Sentiment: Positive")
+        else:
+            st.write(f"Sentiment: {label}")
         st.write(f"Confidence Score: {result[0]['score']:.2f}")
 else:
     st.write("Click 'Submit' for sentiment analysis.")
