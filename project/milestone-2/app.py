@@ -1,28 +1,37 @@
 import streamlit as st
-import torch
-# from transformers import DistilBertTokenizer, DistilBertForSequenceClassification
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
+from transformers import pipeline, AutoTokenizer, AutoModelForSequenceClassification
 
-first_model = "distilbert-base-uncased-finetuned-sst-2-english"
-second_model = "twitter-xlm-roberta-base-sentiment"
-third_model = "bertweet-base-sentiment-analysis"
+# Streamlit app
+st.title("Text Sentiment Analysis")
+st.write("Enter a text and select a pre-trained model to get the sentiment analysis.")
+text = st.text_input("Text:", "I love you!")
+model_options = {
+    "distilbert-base-uncased-finetuned-sst-2-english",
+    "finiteautomata/bertweet-base-sentiment-analysis",
+    "siebert/sentiment-roberta-large-english",
+    "textattack/bert-base-uncased-SST-2",
+    "cardiffnlp/twitter-roberta-base-sentiment"
+}
+selected_model = st.selectbox("Model:", model_options)
 
-st.title('Text Sentiment Analysis')
-st.markdown('Type a sentence in the below text box and select a pretrained model in the menu.')
-text = st.text_input("Enter the sentence", "I love you!")
-model = st.selectbox("Select a model below", (first_model, second_model, third_model))
+# Prepare model, tokenizer and get analysis pipeline
+def get_pipeline(selected_model):
+    model = AutoModelForSequenceClassification.from_pretrained(selected_model)
+    tokenizer = AutoTokenizer.from_pretrained(selected_model)
+    pl = pipeline("sentiment-analysis", model=model, tokenizer=tokenizer)
+    return pl
 
-def distilbert(text):
-    tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased-finetuned-sst-2-english")
-    model = AutoModelForSequenceClassification.from_pretrained("distilbert-base-uncased-finetuned-sst-2-english")
-    inputs = tokenizer(text, return_tensors="pt")
-    with torch.no_grad():
-        logits = model(**inputs).logits
-    predicted_class_id = logits.argmax().item()
-    return model.config.id2label[predicted_class_id]
+# Load the model and perform sentiment analysis
+if st.button("Submit"):
+    with st.spinner("Analyzing sentiment..."):
+        pl = get_pipeline(selected_model)
+        result = pl(text)
+        st.write(f"Sentiment: {result[0]['label']}")
+        if(selected_model == "cardiffnlp/twitter-roberta-base-sentiment"):
+            st.write("(LABEL_0: Negative,  LABEL_1: Neutral,  LABEL_2: Positive)")
+        elif(selected_model == "textattack/bert-base-uncased-SST-2"):
+            st.write("(LABEL_0: Negative,  LABEL_1: Positive)")
+        st.write(f"Confidence Score: {result[0]['score']:.2f}")
 
-def run():
-    if st.button('Submit'):
-        if model == first_model:
-            st.write(text)
-            st.write(distilbert(text))
+else:
+    st.write("Click 'Submit' for sentiment analysis.")
