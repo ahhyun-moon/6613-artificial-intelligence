@@ -1,7 +1,6 @@
 ---
-metadata
 title: 6613 Sentiment Analysis
-emoji: 🐨
+emoji: ⚡
 colorFrom: red
 colorTo: green
 sdk: streamlit
