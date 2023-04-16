@@ -12,7 +12,7 @@ Pretrained with COCO dataset, Faster R-CNN model finds bounding boxes containing
 
 ### **Kalman Filter (Estimation):**
 
-The Kalman Filter operates in a “predict-correct” loop.  It estimates/predicts the position of the target in the next frame using a constant velocity model. When a detection is associated with a target, the detected bounding box is used to update/correct the target state.
+The Kalman Filter operates in a “predict-correct” loop.  It estimates/predicts the position of the target in the next frame using a constant velocity model. When a detection is associated with a target, the detected bounding box is used to update/correct the target state. If no detection is associated with the target, its state is simply predicted without correct using the Linear velocity model.
 <img src="https://github.com/ahhyun-moon/cs-gy-6613-assignments/blob/main/sports-analytics/sports_analytics_kalman.drawio.png" width=700>
 
 ### **Deep SORT:**
@@ -23,7 +23,7 @@ We use Mahalanobis distance for Measurement-to-track association, which is the p
 
 ### **Hungarian Algorithm (Association):**
 The Hungarian Algorithm is a solution for the assignment problem, or maximum/minimum-weighted bipartite matching problem.
-A cost matrix is computed as the intersection-over-union (IOU) distance between each detection and all predicted bounding boxes from the existing targets. If the IOU of detection and target is less than a certain threshold value called IOUmin then that assignment is rejected. This technique solves the occlusion problem and helps maintain the IDs.
+In assigning detections to existing targets, each target’s bounding box geometry is estimated by predicting its new location in the latest frame. The assignment cost matrix is then computed as the intersection-over-union (IOU) distance between each detection and all predicted bounding boxes from the existing targets. If the IOU of detection and target is less than a certain threshold value called IOUmin then that assignment is rejected. This technique solves the occlusion problem and helps maintain the IDs.
 
 
 # Task2: Deep-SORT Implementation (50 points)
