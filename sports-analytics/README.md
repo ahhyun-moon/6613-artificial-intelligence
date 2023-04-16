@@ -8,7 +8,7 @@
 
 ### **Faster RCNN (Detection):**
 
-Pretrained with COCO dataset, Faster R-CNN model finds bounding boxes containing objects such that each bounding box has only one object. Then, it classifies the image inside each bounding box and assign it a label with confidence score.
+In this assignment, we adopt Faster RCNN pretrained with COCO dataset. Faster R-CNN model finds bounding boxes containing objects such that each bounding box has only one object. Then, it classifies the image inside each bounding box and assign it a label with confidence score.
 
 ### **Kalman Filter (Estimation):**
 
