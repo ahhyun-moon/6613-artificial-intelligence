@@ -16,6 +16,8 @@ The Kalman Filter operates in a “predict-correct” loop.  It estimates/predic
 
 The equations of Kalman filter are divided into two groups: the time update equations also called the prediction equations and measurement update equations can be thought of also as the correction equations.
 
+The time update equations are responsible for projecting forward the current state and error covariance estimates to obtain the a priori estimates for the next time step. The measurement update equations are responsible for improving the a posteriori estimate by incorporating a new measurement into the a priori estimate.
+
 <img src="https://github.com/ahhyun-moon/cs-gy-6613-assignments/blob/main/sports-analytics/sports_analytics_kalman.drawio.png" width=700>
 
 ### **Deep SORT:**
