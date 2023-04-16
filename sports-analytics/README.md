@@ -46,16 +46,20 @@ There are three possible improvements to the solution.
 **1. Overlapping Issue**
 
 <img src="https://github.com/ahhyun-moon/cs-gy-6613-assignments/blob/main/sports-analytics/critique1.png" width=600>
+
 - When two objects are overlapped (in this case the soccer players), currrent solution mistakenly detects and tracks as a single person. 
 
 **2. ID Update** 
 
 <img src="https://github.com/ahhyun-moon/cs-gy-6613-assignments/blob/main/sports-analytics/critique2.png" width=600>
-- In one of the later frames, we can see the IDs are much larger numbers compared to the beginning. We can assume that the solution could be losing objects' identities in the process of tracking and generating new IDs for the objects.
+
+- In one of the later frames, we can see the IDs are much larger numbers compared to the beginning. We can assume that the solution could be losing objects' identities in the process of tracking and therefore generating new IDs for the objects.
 - This is possibly due to the camera angles keep zooming in/out and changing angles. 
 
 **3. Ball Tracking**
 
 <img src="https://github.com/ahhyun-moon/cs-gy-6613-assignments/blob/main/sports-analytics/critique4.png" width=600>
 <img src="https://github.com/ahhyun-moon/cs-gy-6613-assignments/blob/main/sports-analytics/critique3.png" width=600>
+
 - Compared to the detection when camera is zoomed in (shown in the first screenshot above), ball detecting and tracking is not consistant when zoomed out(shown in the second screenshot above).  
+- This is possibly due to distortion of ball in frames when the ball is moving in fast speed 
