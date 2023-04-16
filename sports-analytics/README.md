@@ -13,6 +13,9 @@ Pretrained with COCO dataset, Faster R-CNN model finds bounding boxes containing
 ### **Kalman Filter (Estimation):**
 
 The Kalman Filter operates in a “predict-correct” loop.  It estimates/predicts the position of the target in the next frame using a constant velocity model. When a detection is associated with a target, the detected bounding box is used to update/correct the target state. If no detection is associated with the target, its state is simply predicted without correct using the Linear velocity model.
+
+The equations of Kalman filter are divided into two groups: the time update equations also called the prediction equations and measurement update equations can be thought of also as the correction equations.
+
 <img src="https://github.com/ahhyun-moon/cs-gy-6613-assignments/blob/main/sports-analytics/sports_analytics_kalman.drawio.png" width=700>
 
 ### **Deep SORT:**
