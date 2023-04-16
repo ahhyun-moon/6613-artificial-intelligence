@@ -23,7 +23,7 @@ We use Mahalanobis distance for Measurement-to-track association, which is the p
 
 ### **Hungarian Algorithm (Association):**
 The Hungarian Algorithm is a solution for the assignment problem, or maximum/minimum-weighted bipartite matching problem.
-A cost matrix is computed as the intersection-over-union (IOU) distance between each detection and all predicted bounding boxes from the existing targets. The assignment is solved optimally using the Hungarian algorithm. If the IOU of detection and target is less than a certain threshold value called IOUmin then that assignment is rejected. This technique solves the occlusion problem and helps maintain the IDs.
+A cost matrix is computed as the intersection-over-union (IOU) distance between each detection and all predicted bounding boxes from the existing targets. If the IOU of detection and target is less than a certain threshold value called IOUmin then that assignment is rejected. This technique solves the occlusion problem and helps maintain the IDs.
 
 
 # Task2: Deep-SORT Implementation (50 points)
