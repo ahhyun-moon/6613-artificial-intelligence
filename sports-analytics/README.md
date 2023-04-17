@@ -54,7 +54,7 @@ There are three possible improvements to the solution.
 <img src="https://github.com/ahhyun-moon/cs-gy-6613-assignments/blob/main/sports-analytics/critique2.png" width=600>
 
 - In one of the later frames, we can see the IDs are much larger numbers compared to the beginning. We can assume that the solution could be losing objects' identities in the process of tracking and therefore generating new IDs for the objects.
-- This is possibly due to the camera angles keep zooming in/out and changing angles. 
+- This is possibly due to the camera angles keep zooming in/out and changing directions. 
 
 **3. Ball Tracking**
 
