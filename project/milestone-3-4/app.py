@@ -13,38 +13,21 @@ dataset = load_dataset('HUPD/hupd',
 )
 exclude_pending = dataset.filter(lambda example: example["decision"] != "PENDING")
 data = exclude_pending["validation"]
-p_number = data["patent_number"][-5:]
-p_abstract = data["abstract"][-5:]
-p_claims = data["claims"][-5:]
-p_decision = data["decision"][-5:]
+p_number = data["patent_number"]
+p_abstract = data["abstract"]
+p_claims = data["claims"]
+p_decision = data["decision"]
 abstract = ""
 claims = ""
 decision = ""
 # Streamlit app
 st.title("Patentability Score")
 st.write("Select a patent ID and click submit to get patentability score.")
-selected_id = st.selectbox("Patent ID:", p_number, index=4)
-    
-if selected_id == p_number[0]:
-    abstract = p_abstract[0]
-    claims = p_claims[0]
-    decision = p_decision[0]
-elif selected_id == p_number[1]:
-    abstract = p_abstract[1]
-    claims = p_claims[1]
-    decision = p_decision[1]
-elif selected_id == p_number[2]:
-    abstract = p_abstract[2]
-    claims = p_claims[2]
-    decision = p_decision[2]
-elif selected_id == p_number[3]:
-    abstract = p_abstract[3]
-    claims = p_claims[3]
-    decision = p_decision[3]
-elif selected_id == p_number[4]:
-    abstract = p_abstract[4]
-    claims = p_claims[4]
-    decision = p_decision[4]
+selected_id = st.selectbox("Patent ID:", p_number, index=len(p_number)-1)
+selected_index = p_number.index(selected_id)
+abstract = p_abstract[selected_index]
+claims = p_claims[selected_index]
+decision = p_decision[selected_index]
 
 st.text_area("Abstract:", abstract)
 st.text_area("Claims:", claims)
