@@ -13,7 +13,7 @@
 [https://colab.research.google.com/drive/1wX9z8oSRJDCJi-le1arXqSujDSisZ3kU?usp=sharing](https://colab.research.google.com/drive/1wX9z8oSRJDCJi-le1arXqSujDSisZ3kU?usp=sharing)
 
 ## Milestone 4: Documentation and Video Production (Week 6, 20 points)
-### Link to app landing page: 
+### Link to App Landing Page: 
 
 [https://sites.google.com/nyu.edu/cs-gy-6613-project/home](https://sites.google.com/nyu.edu/cs-gy-6613-project/home)
 
@@ -24,7 +24,7 @@
 
 <img src="https://github.com/ahhyun-moon/cs-gy-6613-assignments/blob/milestone-3-4/project/milestone-3-4/0.google_site.png" width=800/>
 
-### Link to video: 
+### Link to Video: 
 
 [https://youtu.be/ULQ8bn5XNMQ](https://youtu.be/ULQ8bn5XNMQ)
 
