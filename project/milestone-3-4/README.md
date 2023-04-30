@@ -4,7 +4,11 @@
 
 [https://huggingface.co/spaces/moonahhyun/project-uspto](https://huggingface.co/spaces/moonahhyun/project-uspto)
 
-### Link to Colab:
+### Link to Finetuned Model: 
+
+[https://huggingface.co/moonahhyun/project-uspto](https://huggingface.co/moonahhyun/project-uspto)
+
+### Link to Colab (training):
 
 [https://colab.research.google.com/drive/1wX9z8oSRJDCJi-le1arXqSujDSisZ3kU?usp=sharing](https://colab.research.google.com/drive/1wX9z8oSRJDCJi-le1arXqSujDSisZ3kU?usp=sharing)
 
@@ -13,15 +17,16 @@
 
 [https://sites.google.com/nyu.edu/cs-gy-6613-project/home](https://sites.google.com/nyu.edu/cs-gy-6613-project/home)
 
-### The above Google Site includes:
+**The above Google Site includes:**
 - Links to current Github page, Huggingface Space, and Google Colab notebook
 - App demonstration video
 - Embedded Patentability Score App 
 
 <img src="https://github.com/ahhyun-moon/cs-gy-6613-assignments/blob/milestone-3-4/project/milestone-3-4/0.google_site.png" width=800/>
 
+### Link to video: 
 
-
+[https://youtu.be/ULQ8bn5XNMQ](https://youtu.be/ULQ8bn5XNMQ)
 
 # Finetuned Model (Result)
 
